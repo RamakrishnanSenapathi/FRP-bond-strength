@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>prediction model</title>
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="color:rgb(30, 0, 255) ;"><em>Prediction of Bond Strength of the concrete</em></h1>
+ 
+     <!-- Main Input For Receiving Query to our ML -->
+    <form style=text-align: center action="{{url_for('predict')}}"method="post">
+    	<input style="border: 2px solid rgb(71, 145, 255);padding:5px;" type="text" name="(cb)" placeholder="tf(mm)"  /><p><small>eg:1-999</small></p>
+      <input style="border: 2px solid rgb(71, 145, 255);padding:5px;" name="text" name="(Mpa)" placeholder="Fc(MPa)"  /><p><small>eg:1-999</small></p>
+      <input style="border: 2px solid rgb(71, 145, 255);padding:5px;" type="text" name="(Gpa)" placeholder="Ef(GPa)"  /><p><small>eg:1-999</small></p>
+      <input style="border: 2px solid rgb(71, 145, 255);padding:5px;" type="text" name="(na)" placeholder="Lf(mm)"  /><p><small>eg:1-999</small></p>
+      <input style="border: 2px solid rgb(71, 145, 255);padding:5px;" type="text" name="(st)" placeholder="bf(mm)" /><p><small>eg:1-999</small></p>
+      <input style="border: 2px solid rgb(71, 145, 255);padding:5px;" type="text" name="(pr)" placeholder="bc(mm)"  /><p><small>eg:1-999</small></p>
+
+        <button class="jeeet" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        
+    </form>
+
+   <br>
+   {{ prediction_text }}
+   <br>
+
+ </div>
+ <style>
+  body{
+    text-align: center;
+    background-image: url('../static/build9.jpeg');
+  }
+  
+ </style>
+
+
+
+</body>
+</html>
